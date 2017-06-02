@@ -1,0 +1,23 @@
+galaxy_info:
+  author: Chris Lindbergh
+  description: A role to install PicoCMS.
+  company: TinkerMill
+
+  license: BSD
+
+  min_ansible_version: 2.2
+
+  platforms:
+    - name: Ubuntu
+      versions:
+        - trusty
+
+  galaxy_tags: 
+    - picocms
+    - pico
+    - cms
+
+dependencies:
+  - geerlingguy.apache
+  - geerlingguy.php
+  - geerlingguy.apache-php-fpm
