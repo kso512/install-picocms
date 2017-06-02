@@ -1,0 +1,12 @@
+---
+# tasks file for install-picocms
+
+- name: Download PicoCMS source
+  get_url:
+    dest: "{{ install_picocms_dest }}"
+    group: "{{ install_picocms_group }}"
+    mode: 0600
+    owner: "{{ install_picocms_owner }}"
+    url: "{{ install_picocms_url }}"
+
+#- name: Extract PicoCMS source
