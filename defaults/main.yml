@@ -6,4 +6,4 @@ install_picocms_url: "https://github.com/picocms/Pico/releases/download/v{{ inst
 install_picocms_dest: "/root/{{ install_picocms_filename }}"
 install_picocms_owner: root
 install_picocms_group: "{{ install_picocms_owner }}"
-install_picocms_html: /var/www/html
+install_picocms_httpdocs: /var/www/html
