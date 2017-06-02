@@ -18,6 +18,6 @@ galaxy_info:
     - cms
 
 dependencies:
-  - geerlingguy.apache
-  - geerlingguy.php
-  - geerlingguy.apache-php-fpm
+  - { role: geerlingguy.apache }
+  - { role: geerlingguy.php }
+  - { role: geerlingguy.apache-php-fpm }
