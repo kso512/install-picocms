@@ -14,7 +14,13 @@ Create a TLS certificate and key pair, then assign it to the role.
 
 | Variable | Description | Default Value |
 | -------- | ----------- | ------------- |
-| install_picocms_x |  | `` |
+| install_picocms_version | Version of PicoCMS to install | `1.0.5` |
+| install_picocms_filename | Short filename of the PicoCMS source archive | `pico-release-v{{ install_picocms_version }}.tar.gz` |
+| install_picocms_url | URL of PicoCMS source archive to download | `https://github.com/picocms/Pico/releases/download/v{{ install_picocms_version }}/{{ install_picocms_filename }}` |
+| install_picocms_dest | Local location of PicoCMS source archive | `/root/{{ install_picocms_filename }}` |
+| install_picocms_owner | Owner of local PicoCMS source archive | `root` |
+| install_picocms_group | Group of local PicoCMS source archive | `{{ install_picocms_owner }}` |
+| install_picocms_httpdocs | HTTPDOCS folder to extract into | `/var/www/html` |
 
 ## Dependencies
 
@@ -36,7 +42,7 @@ Complete example:
 
     - hosts: servers
       roles:
-         - { role: kso512.install-picocms, x: 42 }
+         - { role: kso512.install-picocms, apache_remove_default_vhost: true }
 
 ## License
 
