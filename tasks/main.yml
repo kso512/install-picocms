@@ -8,5 +8,19 @@
     mode: 0600
     owner: "{{ install_picocms_owner }}"
     url: "{{ install_picocms_url }}"
+  tags:
+    - install-picocms
+    - files
 
-#- name: Extract PicoCMS source
+- name: Extract PicoCMS source
+  unarchive:
+    dest: "{{ install_picocms_httpdocs }}"
+    group: "{{ install_picocms_group }}"
+    mode: 0644
+    owner: "{{ install_picocms_owner }}"
+    remote_src: True
+    src: "{{ install_picocms_dest }}"
+  tags:
+    - install-picocms
+    - files
+
