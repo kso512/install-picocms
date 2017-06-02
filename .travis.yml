@@ -27,10 +27,8 @@ install:
   # Create ansible.cfg with correct roles_path
   - printf '[defaults]\nroles_path=../' >ansible.cfg
 
-  # Install dependencies
-  - ansible-galaxy install geerlingguy.apache
-  - ansible-galaxy install geerlingguy.php
-  - ansible-galaxy install geerlingguy.apache-php-fpm
+  # Install via Ansible Galaxy to get all dependencies in meta/main.yml
+  - ansible-galaxy install -f kso512.install-picocms
 
 script:
   # Basic role syntax check
