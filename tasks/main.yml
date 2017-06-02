@@ -25,3 +25,11 @@
     - install-picocms
     - files
 
+- name: Remove default index.html
+  file:
+    path: "{{ install_picocms_dest }}/index.html"
+    state: absent
+  tags:
+    - install-picocms
+    - files
+
