@@ -1,0 +1,9 @@
+---
+# defaults file for install-picocms
+install_picocms_version: 1.0.5
+install_picocms_filename: "pico-release-v{{ install_picocms_version }}.tar.gz"
+install_picocms_url: "https://github.com/picocms/Pico/releases/download/v{{ install_picocms_version }}/{{ install_picocms_filename }}"
+install_picocms_dest: "/root/{{ install_picocms_filename }}"
+install_picocms_owner: root
+install_picocms_group: "{{ install_picocms_owner }}"
+install_picocms_html: /var/www/html
