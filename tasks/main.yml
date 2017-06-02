@@ -17,7 +17,7 @@
     creates: /var/www/html/lib/Pico.php
     dest: "{{ install_picocms_httpdocs }}"
     group: "{{ install_picocms_group }}"
-    mode: 0644
+    mode: 0755
     owner: "{{ install_picocms_owner }}"
     remote_src: True
     src: "{{ install_picocms_dest }}"
@@ -40,4 +40,3 @@
   tags:
     - install-picocms
     - files
-
