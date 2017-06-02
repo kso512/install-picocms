@@ -9,8 +9,5 @@ apache_vhosts:
     extra_parameters: |
           ProxyPassMatch ^/(.*\.php(/.*)?)$ "unix:/var/run/php/php7.0-fpm.sock|fcgi://localhost/var/www/html"
 php_enable_php_fpm: true
-php_packages:
-  - php
-  - php-cli
-  - php-common
+php_packages_extra:
   - libapache2-mod-fastcgi
