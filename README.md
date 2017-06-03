@@ -2,13 +2,13 @@
 
 # install-picocms
 
-An Ansible Role to install PicoCMS.
+An [Ansible](https://www.ansible.com/) [Role](http://docs.ansible.com/ansible/playbooks_roles.html#roles) to install [PicoCMS](http://docs.ansible.com/ansible/playbooks_roles.html#roles).
 
-http://picocms.org/
+PicoCMS is a "stupidly simple & blazing fast, flat file CMS."
 
 ## Requirements
 
-Create a TLS certificate and key pair, then assign it to the role.
+For TLS, create a TLS certificate and key pair, then assign it to the role.
 
 ## Role Variables
 
@@ -26,15 +26,14 @@ Create a TLS certificate and key pair, then assign it to the role.
 
 PicoCMS requires PHP and a web server to run on top of.  
 
-I chose roles from geerlingguy to do that:
+I chose roles from [geerlingguy](https://github.com/geerlingguy) to do that:
 
-- geerlingguy.apache
-- geerlingguy.php
-- geerlingguy.apache-php-fpm
+- [geerlingguy.apache](https://github.com/geerlingguy/ansible-role-apache)
+- [geerlingguy.php](https://github.com/geerlingguy/ansible-role-php)
+- [geerlingguy.apache-php-fpm](https://github.com/geerlingguy/ansible-role-apache-php-fpm)
 
-Overrides passed:
+### Overrides
 
-    apache_remove_default_vhost: true
     apache_remove_default_vhost: true
     apache_global_vhost_settings: |
       DirectoryIndex index.php index.html
