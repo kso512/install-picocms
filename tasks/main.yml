@@ -33,10 +33,11 @@
     - install-picocms
     - files
 
-- name: Copy content folder
+- name: Copy content folder if needed
   command: "cp -R {{ install_picocms_httpdocs }}/content-sample {{ install_picocms_httpdocs }}/content"
   args:
     creates: "{{ install_picocms_httpdocs }}/content/index.md"
   tags:
     - install-picocms
     - files
+

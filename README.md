@@ -34,7 +34,18 @@ I chose roles from geerlingguy to do that:
 
 Overrides passed:
 
--  apache_remove_default_vhost: true
+    apache_remove_default_vhost: true
+    apache_remove_default_vhost: true
+    apache_global_vhost_settings: |
+      DirectoryIndex index.php index.html
+    apache_vhosts:
+      - servername: "{{ ansible_fqdn }}"
+        documentroot: "/var/www/html"
+        extra_parameters: |
+              ProxyPassMatch ^/(.*\.php(/.*)?)$ "fcgi://127.0.0.1:9000/var/www/html"
+    php_enable_php_fpm: true
+    php_packages_extra:
+      - libapache2-mod-fastcgi
 
 ## Example Playbook
 
