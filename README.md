@@ -21,6 +21,7 @@ For TLS, create a TLS certificate and key pair, then assign it to the role.
 | install_picocms_owner | Owner of local PicoCMS source archive | `root` |
 | install_picocms_group | Group of local PicoCMS source archive | `{{ install_picocms_owner }}` |
 | install_picocms_httpdocs | HTTPDOCS folder to extract into | `/var/www/html` |
+| install_picocms_content_src | Source content folder | `{{ install_picocms_httpdocs }}/content-sample` |
 
 ## Dependencies
 
