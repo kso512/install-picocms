@@ -7,3 +7,4 @@ install_picocms_dest: "/root/{{ install_picocms_filename }}"
 install_picocms_owner: root
 install_picocms_group: "{{ install_picocms_owner }}"
 install_picocms_httpdocs: /var/www/html
+install_picocms_content_src: "{{ install_picocms_httpdocs }}/content-sample"
