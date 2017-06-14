@@ -1,5 +1,11 @@
 ---
 - hosts: localhost
   remote_user: root
+  pre_tasks:
+    - name: Add the PPA that contains PHP 7
+      apt_repository:
+        repo: 'ppa:ondrej/php'
+        state: present
+        update_cache: yes
   roles:
     - install-picocms
