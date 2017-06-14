@@ -1,6 +1,12 @@
 ---
 # tasks file for install-picocms
 
+- name: Add the PPA that contains PHP 7
+  apt_repository:
+    repo: 'ppa:ondrej/php'
+    state: present
+    update_cache: yes
+
 - name: Download PicoCMS source
   get_url:
     dest: "{{ install_picocms_dest }}"
