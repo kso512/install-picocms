@@ -23,6 +23,9 @@ script:
   # Run container detached, with our role mounted inside.
   - 'docker run --detach --volume="${PWD}":/etc/ansible/roles/install-picocms:ro ${run_opts} geerlingguy/docker-${distro}-ansible:latest "${init}" > "${container_id}"'
 
+  # Install required Galaxy roles.
+  - 'docker exec --tty "$(cat ${container_id})" env TERM=xterm ansible-galaxy install geerlingguy.apache-php-fpm geerlingguy.php'
+
   # Basic role syntax check
   - >
     docker exec --tty "$(cat ${container_id})" env TERM=xterm
